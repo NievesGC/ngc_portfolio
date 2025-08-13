@@ -1,12 +1,7 @@
-main{
-    height: 72vh;
-    width:100vw;   
-}
-
 
 .contact-form {
     max-width: 500px;
-    margin: auto;
+    margin-top: 150px;
     background: #ffffff;
     padding: 20px;
     border-radius: 10px;
@@ -46,4 +41,16 @@ main{
 
 .contact-form button:hover {
     background: #30391f;
+}
+
+@media (max-width: 768px) {
+    .contact-form{
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form{
+        margin-top: 20px;
+    }
 }
