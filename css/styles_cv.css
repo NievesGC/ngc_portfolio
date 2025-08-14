@@ -50,8 +50,9 @@
     border: solid 2px #ffffffc9;
 }
 
-.cv img:hover{
+.cv:hover  img{
     opacity: 1;
+    transition: opacity 1s ease;
 }
 
 
@@ -365,6 +366,17 @@
 }
 
  /* MEDIA QUERIES */
+
+@media (max-width: 1449px){
+    .cv{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
 @media (max-width: 768px) {
 
     .cv{
