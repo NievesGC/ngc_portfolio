@@ -1,0 +1,446 @@
+
+.frame {
+    position: relative;
+    overflow: visible;
+}
+
+
+
+/* ABOUT SECTION */
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 80%; 
+    margin-top: 30px;
+    position: relative;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 3;
+    min-height: 400px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 20px;
+    min-height: 400px;
+}
+
+.right-bot {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/* CONTENT BOXES */
+.content-box {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(48, 57, 31, 0.3);
+    background: linear-gradient(135deg, #668a4c, #998a4c);
+}
+
+.content-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+.content-box:hover::before {
+    opacity: 0;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(48, 57, 31, 0.4);
+}
+
+.travel {
+    flex: 2;
+    background: linear-gradient(135deg, #4a90e2, #7b68ee);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">✈️</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60px;
+}
+
+.music {
+    flex: 1;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🎵</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+}
+
+.plants {
+    flex: 1;
+    background: linear-gradient(135deg, #2ed573, #7bed9f);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🌿</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+}
+
+.cats {
+    flex: 1;
+    background: linear-gradient(135deg, #ffa726, #ffcc02);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🐱</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+}
+
+.moto {
+    flex: 1;
+    background: linear-gradient(135deg, #8e44ad, #c44569);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">🏍️</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+}
+
+.coock {
+    flex: 1;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="80">👩‍🍳</text></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+}
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/* CONTENT INSIDE BOXES */ 
+.box-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.content-box:hover .box-content {
+    opacity: 1;
+}
+
+.box-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.box-description {
+    font-size: 0.9em;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* EXPANDED STATE */
+.content-box.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 85vh;
+    max-width: 900px;
+    max-height: 700px;
+    z-index: 2000;
+    transition: all 0.5s ease;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.6);
+    overflow: hidden; /* ← Vuelvo a poner esto */
+    pointer-events: auto; /* ← CLAVE: asegurar que recibe eventos */
+}
+
+.content-box.expanded .box-content {
+    opacity: 1;
+    padding: 40px;
+    text-align: left;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    pointer-events: auto; /* ← CLAVE: el contenido debe recibir eventos */
+    position: relative; /* ← Asegurar contexto de posición */
+}
+
+.content-box.expanded .box-content::-webkit-scrollbar {
+    width: 12px;
+}
+
+.content-box.expanded .box-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+.content-box.expanded .box-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+}
+
+.content-box.expanded .box-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Firefox scrollbar */
+.content-box.expanded .box-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.1);
+}
+
+.content-box.expanded .box-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.content-box.expanded .box-description {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.expanded-content {
+    display: none;
+    margin-top: 20px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.content-box.expanded .expanded-content {
+    display: block;
+}
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1500;
+    backdrop-filter: blur(5px);
+    pointer-events: none; /* ← CLAVE: overlay no interfiere */
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* ← Solo cuando está activo */
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.close-btn::before,
+.close-btn::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+}
+
+.close-btn::after {
+    transform: rotate(-45deg);
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    
+    .about {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .left, .right {
+        flex: 1;
+        min-height: auto;
+    }
+
+    .right-bot {
+        flex-direction: column;
+    }
+
+    .return {
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .content-box.expanded {
+        width: 95vw;
+        height: 95vh;
+    }
+
+    .content-box.expanded .box-content {
+        padding: 20px;
+    }
+
+    .content-box.expanded .box-title {
+        font-size: 2em;
+    }
+}
+
+
+
+
+
+
+/* pruebas de meter gif de fondo */
+
+
+/* .content-box.travel {
+    background-image: url('../imagenes/earth-5498_256.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+ */
+
+/* Pruebas para meter video de fondo */
+
+/*  .content-box {
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        
+    z-index: -1;             
+    pointer-events: none;   
+}
+
+.box-content {
+    position: relative;      
+    z-index: 2;
+} */
+
+/* AÑADIR PARA OPTIMIZACION DE VIDEO  */
+/* .travel {
+    background: linear-gradient(135deg, #4a90e2, #7b68ee);
+}
+
+ Si el video no carga, mantiene el gradiente 
+.background-video:not([src]) {
+    display: none;
+} */

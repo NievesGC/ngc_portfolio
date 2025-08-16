@@ -6,6 +6,7 @@
     <title>Nieves Gómez</title>
     
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles_about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -26,19 +27,213 @@
             <p class="crumbs"><a href="index.html">Inicio //</a>cv</p>
         </header>
         <main class="content">
-             <div class="container">
-                <a href="index.html" class="return">
+            <div class="container">
+                <a href="#" class="return" onclick="alert('Regresar al inicio')">
                     <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 24 24" fill="none"
                         stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M10 16l-6-6 6-6" />
                         <path d="M20 21v-7a4 4 0 0 0-4-4H5" />
                     </svg>
                 </a>
+
                 <div class="frame">
-        
+                    <div class="about">
+                        <div class="left">
+                            <div class="content-box travel" onclick="expandBox(this)">
+
+                                <!-- PRUEBAS PARA PONER VIDEO DE FONDO -->
+
+                               <!--  <video class="background-video" autoplay loop muted playsinline>
+                                    <source src="../imagenes/287510_small.mp4" type="video/mp4">
+                                </video> -->
+
+                                <!-- OPTIMIZACION VIDEO 
+                                    <video class="background-video" autoplay loop muted playsinline preload="metadata">
+                                        <source src="../imagenes/287510_small.webm" type="video/webm">
+                                        <source src="../imagenes/287510_small.mp4" type="video/mp4">
+                                    </video>
+                                -->
+                                <div class="box-content">
+                                    <div class="box-title">Viajes</div>
+                                    <div class="box-description">Explorando el mundo</div>
+                                    <div class="expanded-content">
+                                        <h3>Mi pasión por los viajes</h3>
+                                        <p>Cada viaje es una oportunidad de crecimiento personal. He tenido la fortuna
+                                        de recorrer diferentes países y culturas, lo que me ha enseñado a adaptarme,
+                                        ser más empática y ver el mundo desde múltiples perspectivas.</p>
+
+                                        <p>Algunos de mis destinos favoritos incluyen:</p>
+                                        <ul style="margin: 15px 0; padding-left: 20px;">
+                                            <li>Las montañas de los Alpes suizos</li>
+                                            <li>Las playas cristalinas del Caribe</li>
+                                            <li>Los templos antiguos de Asia</li>
+                                            <li>Los museos y arte de Europa</li>
+                                            <li>Las auroras boreales de Islandia</li>
+                                            <li>Los safaris africanos</li>
+                                            <li>Las ciudades vibrantes de Japón</li>
+                                        </ul>
+
+                                        <p>Viajar no solo me ha dado recuerdos increíbles, sino que también ha
+                                        influenciado mi forma de trabajar, haciéndome más creativa y resolutiva ante
+                                        los desafíos.</p>
+
+                                        <p>Cada cultura me ha enseñado algo diferente sobre la resolución de problemas y
+                                            la comunicación, habilidades que son fundamentales en el desarrollo de
+                                            software. Por ejemplo, la paciencia que aprendí en los templos de Tailandia
+                                            me ayuda cuando debug código complejo, y la adaptabilidad que desarrollé
+                                            navegando por ciudades desconocidas me sirve cuando trabajo con nuevas
+                                            tecnologías.</p>
+
+                                        <p>Mi próximo destino en la lista es Nueva Zelanda, donde espero combinar mi
+                                            amor por la naturaleza con la aventura de explorar paisajes únicos que han
+                                            servido de inspiración para tantas obras cinematográficas.</p>
+
+                                        <h4>Lecciones de viaje aplicadas al código</h4>
+                                        <p>Los viajes me han enseñado que cada problema tiene múltiples soluciones,
+                                            dependiendo del contexto cultural y las herramientas disponibles. Esta
+                                            mentalidad es invaluable en programación.</p>
+
+                                        <p>Cuando me perdí en Tokio sin hablar japonés, aprendí la importancia de la
+                                            documentación visual y los iconos universales - algo que ahora aplico al
+                                            diseñar interfaces de usuario intuitivas.</p>
+
+                                        <p>En Marruecos, negociar en los mercados me enseñó sobre la importancia de
+                                            entender las necesidades del otro lado - una habilidad crucial cuando
+                                            trabajo con clientes para entender sus requerimientos reales.</p>
+
+                                        <p>Cada viaje me recuerda que la diversidad de perspectivas enriquece cualquier
+                                            proyecto, ya sea explorar una nueva ciudad o desarrollar una aplicación
+                                            innovadora.</p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" onclick="event.stopPropagation(); closeBox()"></button>
+                            </div>
+
+                            <div class="content-box music" onclick="expandBox(this)">
+                                <div class="box-content">
+                                    <div class="box-title">Música</div>
+                                    <div class="box-description">Ritmos que inspiran</div>
+                                    <div class="expanded-content">
+                                        <h3>La música en mi vida</h3>
+                                        <p>La música es mi compañera constante, tanto en el trabajo como en la vida
+                                            personal. Me ayuda a mantener la concentración durante las sesiones de
+                                            programación y es mi forma favorita de relajarme.</p>
+
+                                        <p>Mis géneros favoritos van desde el jazz clásico hasta la música electrónica
+                                            moderna. También toco el piano desde pequeña, lo que me ha enseñado
+                                            disciplina y paciencia.</p>
+
+                                        <p>Creo que la música y la programación tienen mucho en común: ambas requieren
+                                            creatividad, estructura y la capacidad de crear algo hermoso a partir de
+                                            elementos individuales.</p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" onclick="event.stopPropagation(); closeBox()"></button>
+                            </div>
+                        </div>
+
+                        <div class="right">
+                            <div class="content-box plants" onclick="expandBox(this)">
+                                <div class="box-content">
+                                    <div class="box-title">Plantas</div>
+                                    <div class="box-description">Verde que da vida</div>
+                                    <div class="expanded-content">
+                                        <h3>Mi jardín personal</h3>
+                                        <p>Cuidar plantas se ha convertido en mi forma de meditación diaria. Tengo un
+                                            pequeño jardín interior con más de 20 especies diferentes, desde suculentas
+                                            hasta plantas tropicales.</p>
+
+                                        <p>Esta afición me ha enseñado paciencia, responsabilidad y la importancia del
+                                            cuidado constante - cualidades que también aplico en mi trabajo como
+                                            desarrolladora.</p>
+
+                                        <p>Mis plantas favoritas incluyen:</p>
+                                        <ul style="margin: 15px 0; padding-left: 20px;">
+                                            <li>Monstera deliciosa</li>
+                                            <li>Pothos dorados</li>
+                                            <li>Fiddle leaf fig</li>
+                                            <li>Varias especies de cactus</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <button class="close-btn" onclick="event.stopPropagation(); closeBox()"></button>
+                            </div>
+
+                            <div class="content-box cats" onclick="expandBox(this)">
+                                <div class="box-content">
+                                    <div class="box-title">Gatos</div>
+                                    <div class="box-description">Mis compañeros felinos</div>
+                                    <div class="expanded-content">
+                                        <h3>Vida con gatos</h3>
+                                        <p>Tengo dos gatos rescatados que han transformado completamente mi hogar. Luna
+                                            y Sol son mis compañeros de trabajo - siempre están cerca mientras programo,
+                                            aunque a veces caminen sobre el teclado.</p>
+
+                                        <p>Cuidar de ellos me ha enseñado sobre responsabilidad, rutina y la importancia
+                                            de crear un ambiente acogedor. También son excelentes para el estrés - no
+                                            hay nada como el ronroneo de un gato después de un día largo de código.</p>
+
+                                        <p>Son mis mejores críticos: si mi código no funciona, ellos lo saben
+                                            inmediatamente por mi lenguaje corporal.</p>
+                                    </div>
+                                </div>
+                                <button class="close-btn" onclick="event.stopPropagation(); closeBox()"></button>
+                            </div>
+
+                            <div class="right-bot">
+                                <div class="content-box moto" onclick="expandBox(this)">
+                                    <div class="box-content">
+                                        <div class="box-title">Moto</div>
+                                        <div class="box-description">Libertad sobre ruedas</div>
+                                        <div class="expanded-content">
+                                            <h3>Mi pasión por las motos</h3>
+                                            <p>Conducir moto es mi forma favorita de desconectar del mundo digital. La
+                                                sensación de libertad y la necesidad de estar completamente presente en
+                                                el momento me ayudan a resetear mi mente.</p>
+
+                                            <p>Tengo una Kawasaki Ninja que me acompaña en escapadas de fin de semana
+                                                por las carreteras de montaña. Es una actividad que requiere
+                                                concentración total, similar a la programación, pero completamente
+                                                diferente.</p>
+
+                                            <p>Esta afición me ha enseñado sobre mecánica, mantenimiento preventivo y la
+                                                importancia de la seguridad - lecciones que también aplico en el
+                                                desarrollo de software.</p>
+                                        </div>
+                                    </div>
+                                    <button class="close-btn" onclick="event.stopPropagation(); closeBox()"></button>
+                                </div>
+
+                                <div class="content-box coock" onclick="expandBox(this)">
+                                    <div class="box-content">
+                                        <div class="box-title">Cocina</div>
+                                        <div class="box-description">Creatividad culinaria</div>
+                                        <div class="expanded-content">
+                                            <h3>Arte en la cocina</h3>
+                                            <p>Cocinar es otra forma de expresión creativa para mí. Me encanta
+                                                experimentar con sabores, texturas y presentaciones, especialmente la
+                                                cocina mediterránea y asiática.</p>
+
+                                            <p>Veo muchas similitudes entre cocinar y programar: ambos requieren
+                                                planificación, seguir procesos, adaptar cuando algo no sale como
+                                                esperado, y la satisfacción de crear algo funcional y hermoso.</p>
+
+                                            <p>Mis especialidades incluyen:</p>
+                                            <ul style="margin: 15px 0; padding-left: 20px;">
+                                                <li>Paellas tradicionales</li>
+                                                <li>Ramen casero</li>
+                                                <li>Repostería francesa</li>
+                                                <li>Platos veganos creativos</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <button class="close-btn" onclick="event.stopPropagation(); closeBox()"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        
-             </div>
+            </div>
         </main>
         <footer class="footer-sticky">
            <div class="footer-container">
@@ -77,6 +272,30 @@
            
         </footer>
     </div>
+    <div class="overlay" onclick="closeBox()"></div>
+    <script src="../js/about.js"></script>
 </body>
 </body>
 </html>
+
+
+
+
+
+
+<!-- <div class="frame"> 
+    <div class="about">
+        <div class="left">
+            <div class="travel"></div>
+            <div class="music"></div>
+        </div>
+        <div class="right">
+            <div class="plants"></div>
+            <div class="cats"></div>
+            <div class="right-bot">
+                <div class="moto"></div>
+                <div class="coock"></div>
+            </div>
+        </div>
+    </div>
+</div>-->
